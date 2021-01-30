@@ -61,7 +61,7 @@ class Service implements ServiceContract
             // attempt to authenticate user by strategy
             $attemptMethod = $this->findServiceAttemptMethodNameByUsername($username);
             return $this->$attemptMethod($username, $password);
-        } catch (\Exception $exception) {
+        } catch (\Throwable $exception) {
             // if exception throw
             // authentication fails
             return false;
